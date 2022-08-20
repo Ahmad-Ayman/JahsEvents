@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
   runApp(const MyApp());
 }
 
@@ -17,10 +18,23 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Jahs Events',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home: ,
+      home: Homee(),
     );
+  }
+}
+
+class Homee extends StatefulWidget {
+  const Homee({Key? key}) : super(key: key);
+
+  @override
+  State<Homee> createState() => _HomeeState();
+}
+
+class _HomeeState extends State<Homee> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
   }
 }

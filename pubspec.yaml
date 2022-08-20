@@ -34,6 +34,10 @@ dependencies:
   get_it:
   # Equatable
   equatable:
+  # Dio networking
+  dio:
+  # Dartz
+  dartz:
 
 dev_dependencies:
   flutter_test:
