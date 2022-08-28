@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:jahsevents/jahs/home/data/model/banners_model.dart';
+import 'package:jahsevents/core/error/exceptions.dart';
+import 'package:jahsevents/core/network/error_msg_model.dart';
 
-import '../../../../../core/network/api_constant.dart';
+import '../../../../../../core/network/api_constant.dart';
+import '../../model/banners_model.dart';
 
 abstract class BaseHomeRemoteDataSource {
   Future<List<HomeBannersModel>> getBanners();
@@ -16,7 +18,7 @@ class HomeRemoteDataSource extends BaseHomeRemoteDataSource {
         (e) => HomeBannersModel.fromJson(e),
       ));
     } else {
-      return [];
+      throw ServerException(errorMessageModel: ErrorMessageModel.fromJson(response.data));
     }
   }
 }

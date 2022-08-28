@@ -1,4 +1,4 @@
-import 'package:jahsevents/jahs/home/domain/entities/banners.dart';
+import '../../domain/entities/banners.dart';
 
 class HomeBannersModel extends HomeBanners {
   const HomeBannersModel({
