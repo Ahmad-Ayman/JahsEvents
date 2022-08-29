@@ -1,9 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:jahsevents/core/error/exceptions.dart';
 import 'package:jahsevents/core/error/failure.dart';
-import 'package:jahsevents/jahs/home/data/datasource/remote_data_source/home_remote_data_source.dart';
-import 'package:jahsevents/jahs/home/domain/entities/banners.dart';
-import 'package:jahsevents/jahs/home/domain/repositories/base_home_repository.dart';
+
+import '../../domain/entities/banners.dart';
+import '../../domain/repositories/base_home_repository.dart';
+import '../datasource/remote_data_source/home_remote_data_source.dart';
 
 class HomeRepository extends BaseHomePageRepository {
   final BaseHomeRemoteDataSource baseHomeRemoteDataSource;

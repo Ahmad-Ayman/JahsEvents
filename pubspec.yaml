@@ -23,6 +23,7 @@ dependencies:
   flutter_platform_widgets:
   # GetX dependency
   get:
+  get_storage:
   # GIF animations library
   lottie:
   # Spinner
@@ -48,6 +49,8 @@ dependencies:
   introduction_screen:
   #Drawer
   flutter_zoom_drawer:
+  #Shimmer Loading
+  shimmer:
 dev_dependencies:
   flutter_test:
     sdk: flutter

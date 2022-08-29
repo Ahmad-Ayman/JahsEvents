@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
+import 'package:jahsevents/core/di/di.dart';
 
 import 'modules/intro/on_boarding_screen.dart';
 import 'modules/jahs/home/data/datasource/remote_data_source/home_remote_data_source.dart';
@@ -20,7 +20,8 @@ void main() async {
 
 void _getData() async {
   BaseHomeRemoteDataSource baseHomeRemoteDataSource = HomeRemoteDataSource();
-  BaseHomePageRepository baseHomePageRepository = HomeRepository(baseHomeRemoteDataSource);
+  BaseHomePageRepository baseHomePageRepository =
+      HomeRepository(baseHomeRemoteDataSource);
   final res = await GetHomeBannersUseCase(baseHomePageRepository).execute();
   res.fold((l) => null, (r) {
     bann = r;
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: AppBinding(),
       title: 'Jahs Events',
       theme: ThemeData(
         primarySwatch: Colors.blue,

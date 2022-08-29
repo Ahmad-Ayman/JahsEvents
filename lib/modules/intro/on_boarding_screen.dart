@@ -5,6 +5,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:jahsevents/core/shared/colors.dart';
+import 'package:jahsevents/modules/jahs/home/presentation/screens/app_layout.dart';
 
 import '../jahs/home/presentation/screens/home_screen.dart';
 
@@ -18,16 +19,7 @@ class OnBoardingPage extends StatefulWidget {
 class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
   void _onIntroEnd(context) {
-    EasyLoading.show(
-      status: 'loading...',
-      indicator: SpinKitPouringHourGlass(color: blueColor),
-    );
-
-    Future.delayed(const Duration(milliseconds: 1000), () {
-      EasyLoading.showSuccess('Welcome to JAHS!');
-      EasyLoading.dismiss();
-      Get.off(() => const HomeScreen());
-    });
+    Get.off(() => AppLayout());
   }
 
   Widget _buildImage(String assetName, [double width = 350]) {
@@ -61,7 +53,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       pages: [
         PageViewModel(
           title: "Title of First page",
-          body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor.",
+          body:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor.",
           decoration: pageDecoration.copyWith(
             bodyFlex: 2,
             imageFlex: 4,
@@ -73,7 +66,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         ),
         PageViewModel(
           title: "Title of Second page",
-          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor.',
+          body:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor.',
           decoration: pageDecoration.copyWith(
             bodyFlex: 2,
             imageFlex: 4,
@@ -85,7 +79,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         ),
         PageViewModel(
           title: "Title of last page",
-          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor.',
+          body:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor.',
           decoration: pageDecoration.copyWith(
             bodyFlex: 2,
             imageFlex: 4,
@@ -109,7 +104,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
-      controlsPadding: kIsWeb ? const EdgeInsets.all(12.0) : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
+      controlsPadding: kIsWeb
+          ? const EdgeInsets.all(12.0)
+          : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
         color: Color(0xFFBDBDBD),

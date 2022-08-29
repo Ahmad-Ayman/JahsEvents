@@ -4,7 +4,7 @@ import 'menu_items.dart';
 import 'model/menu_item_model.dart';
 
 class MenuScreen extends StatelessWidget {
-  final MenuItem currentItem;
+  final MenuItemModel currentItem;
   final ValueChanged<MenuItemModel> onSelectedItem;
 
   const MenuScreen({
@@ -31,7 +31,8 @@ class MenuScreen extends StatelessWidget {
                       Center(
                         child: CircleAvatar(
                             maxRadius: 40,
-                            backgroundImage: const NetworkImage('https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png')
+                            backgroundImage: const NetworkImage(
+                                'https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png')
 
                             // userSaved == null
                             //     ? const NetworkImage('https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png')
@@ -78,7 +79,8 @@ class MenuScreen extends StatelessWidget {
                     // }
                   },
                   child: Container(
-                    padding: const EdgeInsets.only(right: 30, left: 20, top: 10, bottom: 10),
+                    padding: const EdgeInsets.only(
+                        right: 30, left: 20, top: 10, bottom: 10),
                     decoration: BoxDecoration(
                       border: Border.all(
                         width: 1,
