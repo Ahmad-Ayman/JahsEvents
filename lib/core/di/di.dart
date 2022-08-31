@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:jahsevents/modules/jahs/home/presentation/controller/home_contoller.dart';
+import 'package:jahsevents/modules/app_layout/controllers/app_contoller.dart';
 
 class AppBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => HomeController());
+    Get.lazyPut(() => AppController());
   }
 }

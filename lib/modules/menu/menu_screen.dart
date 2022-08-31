@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_view.dart';
 
+import '../app_layout/controllers/app_contoller.dart';
 import 'menu_items.dart';
 import 'model/menu_item_model.dart';
 
-class MenuScreen extends StatelessWidget {
+class MenuScreen extends GetView<AppController> {
   final MenuItemModel currentItem;
   final ValueChanged<MenuItemModel> onSelectedItem;
 
@@ -27,11 +29,11 @@ class MenuScreen extends StatelessWidget {
                 onTap: () {},
                 child: DrawerHeader(
                   child: Column(
-                    children: [
+                    children: const [
                       Center(
                         child: CircleAvatar(
                             maxRadius: 40,
-                            backgroundImage: const NetworkImage(
+                            backgroundImage: NetworkImage(
                                 'https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png')
 
                             // userSaved == null
@@ -39,7 +41,7 @@ class MenuScreen extends StatelessWidget {
                             //     : NetworkImage('$kBaseUserImageUrl${userSaved!.userData![0].image}'),
                             ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 15,
                       ),
                       Text(
@@ -55,7 +57,7 @@ class MenuScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               // if (userSaved != null)
@@ -90,18 +92,18 @@ class MenuScreen extends StatelessWidget {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(
+                      children: const [
+                        Icon(
                           Icons.lock,
                           color: Colors.white,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 8,
                         ),
                         Text(
                           // con.isLoggedIn.value ? 'Logout' : 'Login',
                           'Login',
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: Colors.white,
                           ),
                         ),

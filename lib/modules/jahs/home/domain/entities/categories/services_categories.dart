@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:jahsevents/modules/jahs/home/domain/entities/services_offered.dart';
+import 'package:jahsevents/modules/jahs/home/domain/entities/categories/services_offered.dart';
 
 class ServicesCategories extends Equatable {
   final int categoryId;

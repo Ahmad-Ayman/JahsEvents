@@ -5,7 +5,8 @@ class HomeBannersModel extends HomeBanners {
     required String homeBannerImage,
   }) : super(homeBannerImage: homeBannerImage);
 
-  factory HomeBannersModel.fromJson(Map<String, dynamic> json) => HomeBannersModel(
+  factory HomeBannersModel.fromJson(Map<String, dynamic> json) =>
+      HomeBannersModel(
         homeBannerImage: json['imageLink'],
       );
 }

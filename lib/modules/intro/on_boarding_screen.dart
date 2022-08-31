@@ -5,7 +5,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:jahsevents/core/shared/colors.dart';
-import 'package:jahsevents/modules/jahs/home/presentation/screens/app_layout.dart';
+import 'package:jahsevents/modules/app_layout/view/app_layout.dart';
 
 import '../jahs/home/presentation/screens/home_screen.dart';
 

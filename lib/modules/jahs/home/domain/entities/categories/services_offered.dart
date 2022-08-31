@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 
 class ServicesOffered extends Equatable {
-  final int serviceId;
+  final String serviceId;
   final String serviceName;
   final String serviceDesc;
   final String serviceImage;
-  final int serviceCategoryId;
+  final String serviceCategoryId;
 
   const ServicesOffered({
     required this.serviceId,
