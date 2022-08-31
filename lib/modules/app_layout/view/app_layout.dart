@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
+import 'package:jahsevents/core/shared/colors.dart';
 import 'package:jahsevents/modules/app_layout/controllers/app_contoller.dart';
 
 import '../../menu/menu_items.dart';
@@ -13,6 +15,7 @@ class AppLayout extends GetView<AppController> {
   Widget build(BuildContext context) {
     return GetX<AppController>(
       builder: (_) => ZoomDrawer(
+        menuBackgroundColor: purpleColor,
         controller: _.zoomDrawerController,
         menuScreen: Builder(
           builder: (context) => MenuScreen(
@@ -26,8 +29,8 @@ class AppLayout extends GetView<AppController> {
         borderRadius: 40.0,
         showShadow: true,
         angle: -10.0,
-        drawerShadowsBackgroundColor: Colors.grey,
-        slideWidth: MediaQuery.of(context).size.width * 0.8,
+        drawerShadowsBackgroundColor: babyBlueColor,
+        slideWidth: MediaQuery.of(context).size.width * 0.7,
       ),
     );
   }

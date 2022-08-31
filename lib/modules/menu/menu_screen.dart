@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:jahsevents/core/shared/colors.dart';
 
 import '../app_layout/controllers/app_contoller.dart';
 import 'menu_items.dart';
@@ -20,7 +21,7 @@ class MenuScreen extends GetView<AppController> {
     return Theme(
       data: ThemeData.dark(),
       child: Scaffold(
-        backgroundColor: Colors.indigo,
+        backgroundColor: purpleColor,
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -12,6 +12,15 @@ import '../../domain/repositories/base_home_repository.dart';
 import '../../domain/usecases/get_home_banners_usecase.dart';
 
 class HomeController extends GetxController {
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    getBannersData();
+    getCategoriesData();
+    debugPrint('size = ${banners.length}');
+  }
+
   var banners = RxList<HomeBanners>([]);
 
   void getBannersData() async {
@@ -53,26 +62,5 @@ class HomeController extends GetxController {
       EasyLoading.showSuccess('Success');
       EasyLoading.dismiss();
     });
-  }
-
-  List<Widget> homeImageSliders(List<HomeBanners> h) {
-    return h
-        .map((item) => Container(
-              child: Container(
-                margin: EdgeInsets.all(5.0),
-                child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                    child: Container(
-                      width: 1000.0,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          image: DecorationImage(
-                            image: NetworkImage(item.homeBannerImage),
-                            fit: BoxFit.cover,
-                          )),
-                    )),
-              ),
-            ))
-        .toList();
   }
 }
