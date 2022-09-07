@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:jahsevents/core/shared/colors.dart';
+import 'package:jahsevents/modules/jahs/auth/presentation/screens/register_screen.dart';
 
 import '../app_layout/controllers/app_contoller.dart';
 import 'menu_items.dart';
@@ -80,6 +82,8 @@ class MenuScreen extends GetView<AppController> {
                     // } else {
                     //   Get.to(() => LoginScreen());
                     // }
+
+                    Get.to(()=>RegisterScreen());
                   },
                   child: Container(
                     padding: const EdgeInsets.only(

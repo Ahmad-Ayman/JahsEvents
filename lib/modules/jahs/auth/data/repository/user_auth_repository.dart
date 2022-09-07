@@ -21,8 +21,22 @@ class UserAuthRepository extends BaseUserAuthRepository {
   }
 
   @override
-  Future<Either<Failure, User>> authUserRegister() async {
-    final res = await baseUserAuthRemoteDataSource.userRegister();
+  Future<Either<Failure, User>> authUserRegister(
+    fname,
+    lname,
+    email,
+    pass,
+    phone,
+    nationalID,
+  ) async {
+    final res = await baseUserAuthRemoteDataSource.userRegister(
+      fname,
+      lname,
+      email,
+      pass,
+      phone,
+      nationalID,
+    );
     try {
       return Right(res);
     } on ServerException catch (failure) {

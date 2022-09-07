@@ -9,5 +9,12 @@ abstract class BaseUserAuthRepository {
 
   Future<Either<Failure, User>> authUserLogin();
 
-  Future<Either<Failure, User>> authUserRegister();
+  Future<Either<Failure, User>> authUserRegister(
+    fname,
+    lname,
+    email,
+    pass,
+    phone,
+    nationalID,
+  );
 }

@@ -4,12 +4,26 @@ import '../../../../../core/error/failure.dart';
 import '../entities/user.dart';
 import '../repository/base_user_auth_repository.dart';
 
-class UserLoginUseCase {
+class UserRegisterUseCase {
   final BaseUserAuthRepository baseUserAuthRepository;
 
-  UserLoginUseCase(this.baseUserAuthRepository);
+  UserRegisterUseCase(this.baseUserAuthRepository);
 
-  Future<Either<Failure, User>> execute() async {
-    return await baseUserAuthRepository.authUserRegister();
+  Future<Either<Failure, User>> execute(
+    fname,
+    lname,
+    email,
+    pass,
+    phone,
+    nationalID,
+  ) async {
+    return await baseUserAuthRepository.authUserRegister(
+      fname,
+      lname,
+      email,
+      pass,
+      phone,
+      nationalID,
+    );
   }
 }
